@@ -8,7 +8,7 @@ En el desarrollo de la API, se tuvieron en cuenta aspectos relacionados con cier
 ### Diagrama de rutas en la API.
 ![Diagrama de Rutas](imgBlossomAssesment/DevFlowWithRoutes.png)
 
-## Descripción del Diagrama
+## Descripción del Diagrama: 1
 
 El diagrama ilustra las siguientes rutas y su flujo:
 
@@ -24,14 +24,16 @@ El diagrama ilustra las siguientes rutas y su flujo:
   - Se dispone la ruta para revisar el UI de swagger entorno al compendio de endpoints o rutas activas; poder probarlas y leer documentación adicional de las salidas.
 
 
-![Diagrama de Rutas](imgBlossomAssesment/HowDevWorksInReq.png)
+### Diagrama de flujo de consulta en API.
 
-## Descripción del Diagrama
+![Diagrama de flujo de consulta](imgBlossomAssesment/HowDevWorksInReq.png)
+
+## Descripción del Diagrama: 2
 
 El diagrama ilustra las siguientes rutas y su flujo:
 
-- **Ruta 1:** `/graphql`
-  - Se dispone principalmente para realizar consultas con la interface de usuario de graphql.
+- **middleware : queryValidationExist ** `src/middlewares/queryValidatorMiddleware.ts`
+  - Encargado principalmente de validar si el hash (el cuerpo de la solicitud) ya se ha trabajando anteriormente y se puede entregar en al request (cahcé.)
 - **Ruta 2:** `/caharcter/:id`
   - Se dispone para realizar consultas al servicio de API externa y poder extraer con base a un id, unicamente los atributos seleccionados.
 - **Ruta 3:** `/resetDataBasePgsl/`
