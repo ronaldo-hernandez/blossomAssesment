@@ -38,9 +38,9 @@ El diagrama ilustra las siguientes rutas y su flujo:
 
 - **middleware : queryValidationExist**  ==> `src/middlewares/queryValidatorMiddleware.ts` <br>
   - Encargado principalmente de validar si el hash (el cuerpo de la solicitud) ya se ha trabajando anteriormente y se puede entregar en al request (caché.) ; sino esta en redis entonces valida si se encuentra en postgres si está entonces que guarde la informacion en redis y que entregue la información consultada en postgres en respuesta a la solicitud, finalmente si pudo encontrar información en el storage de postgres ni en caché, entonces que invoque **NextFunction** para pasar al siguiente Middleware.<br><br>
-- **middleware : queryCustodianMiddleware**  ==> `src/middlewares/queryCustodianMiddleware.ts`<br>
+- **middleware : saveInRedis**  ==> `src/middlewares/queryCustodianMiddleware.ts`<br>
   - Recibiendo el cuerpo de la solicitud de query, se realiza la consulta en la ruta de `/graphql` y por consiguiente se almacena en redis con key del hash, se toman el objeto de respuesta de la solicitud, se mapea con fucniones asincronicas del modelo de bases de datos de migración y se migran a la base en postgres usando el protocolo `sequelize-typescript`. <br><br>
-- **middleware : logTimeExecutionMiddleware**  ==> `src/middlewares/logTimeExecutionMiddleware.ts`<br>
+- **middleware : logExecutionTime**  ==> `src/middlewares/logTimeExecutionMiddleware.ts`<br>
   - Se configura un middleware para que imprima por consola el tiempo tomado en la consulta en graphql.
 
 
@@ -59,7 +59,7 @@ npm install --save-dev @types/node-cron
 npm install @types/swagger-ui-express
 ```
 
-## Configuracion del -env:
+## Configuracion del .env:
 
 Se crea un archivo `.env` y se relacionan las variables sensibles.
 
