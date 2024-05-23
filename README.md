@@ -72,6 +72,8 @@ Recordar que debe tener instalado [redis](https://redis.io/docs/latest/operate/o
 Para efectos de la prueba se creo una base de datos,(en la siguiente imagen se presenta).
 
 - Siguiendo los siguiente comando en [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/)
+
+[Base en Postgresql](psqgl)
  
-1). Se crea un archivo :
+
 
