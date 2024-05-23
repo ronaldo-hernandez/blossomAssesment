@@ -73,7 +73,13 @@ Para efectos de la prueba se creo una base de datos,(en la siguiente imagen se p
 
 - Siguiendo los siguiente comando en [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/)
 
-[Base en Postgresql](imgBlossomAssesment/dbInPsgql.png)
+### Base de datos en PostgreSQL.
+![Base en Postgresql](imgBlossomAssesment/dbInPsgql.png)
+
+### Modelo ERD.
+
+![ModeloERD](imgBlossomAssesment/ModeloERD.png)
+
  
 
 
