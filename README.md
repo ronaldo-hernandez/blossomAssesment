@@ -64,6 +64,7 @@ npm install @types/swagger-ui-express
 Se crea un archivo `.env` y se relacionan las variables sensibles.
 
 ```bash
+HOST_DB = Host en la base que se desea realizar las migraciones.
 DATABASE= Base de datos en la que se desear realizar las migraciones.
 USERNAME_DB= Nombre del usuario administrador de la base de datos. 
 PASS_DB= Contraseña del usario administrador de la base de datos.
