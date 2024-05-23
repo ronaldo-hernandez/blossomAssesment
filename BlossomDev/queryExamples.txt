@@ -1,0 +1,20 @@
+query {
+  charactersByFilter(filter: { name:"Rick Sanchez" }) {
+    results {
+      id
+      name
+      status
+      species
+      type
+      gender
+      origin {
+        name
+      }
+      location {
+        name
+      }
+      image
+      created
+    }
+  }
+}
