@@ -59,6 +59,18 @@ npm install --save-dev @types/node-cron
 npm install @types/swagger-ui-express
 ```
 
+## Configuracion del -env:
+
+Se crea un archivo `.env` y se relacionan las variables sensibles.
+
+```bash
+DATABASE= Base de datos en la que se desear realizar las migraciones.
+USERNAME_DB= Nombre del usuario administrador de la base de datos. 
+PASS_DB= Contraseña del usario administrador de la base de datos.
+APP_PORT = Puerto que se desea realizar el despliegue del servidor.
+APP_HOST = El host en el que se desea realizar el despliegue del servidor.
+```
+
 Recordar que debe tener instalado [redis](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) y tambien instalado un controlador de bases de datos [postgresql](https://www.postgresql.org/download/) .
 
 ### Recomenaciones para inicialización.
