@@ -57,6 +57,13 @@ npm install --save-dev typescript ts-node @types/node @types/express @types/expr
 npm install --save-dev @types/sequelize
 npm install --save-dev @types/node-cron
 npm install @types/swagger-ui-express
+```
 
+Recordar que debe tener instalado [redis](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) y tambien instalado un controlador de bases de datos [postgresql](https://www.postgresql.org/download/) .
+
+### Recomenaciones para inicialización.
+
+- **npm run dev:** El comando por consola de inicialización `npm run dev`, utiliza el modulo de `nodemon` el cual reinicia la compilación de servicio esporadicamente, cabe recordar que hay un worker que realiza el reseteo de la base para la agregación de 15 registros al reiniciar el servidor, por lo tanto este worker se activaria en cada reinicio de sesión realizada por el nodemon. <br><br>
+- **npm start:** Por el contrario el comando por consola de inicialización `npm start`, utiliza el modulo de `ts-node` para iniciar una y unica vez el servidor. <br><br>
 
 
