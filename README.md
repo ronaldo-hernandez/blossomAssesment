@@ -67,3 +67,11 @@ Recordar que debe tener instalado [redis](https://redis.io/docs/latest/operate/o
 - **npm start:** Por el contrario el comando por consola de inicialización `npm start`, utiliza el modulo de `ts-node` para iniciar una y unica vez el servidor. <br><br>
 
 
+### Recomenaciones para set up del controlador de bases de datos.
+
+Para efectos de la prueba se creo una base de datos,(en la siguiente imagen se presenta).
+
+- Siguiendo los siguiente comando en [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/)
+ 
+1). Se crea un archivo :
+
