@@ -3,6 +3,10 @@
 
 ## Flujo de Desarrollo
 
+- Version node utilizada: v8.18.0 <br>
+
+
+
 En el desarrollo de la API, se tuvieron en cuenta aspectos relacionados con ciertas validaciones en torno al uso de las rutas propuestas en el constructor de la app en Express. A continuación, se presenta el diagrama que permite identificar las rutas dispuestas en el servidor, así como el flujo de desarrollo que representa cada una.
 
 ### Diagrama de rutas en la API.
@@ -32,24 +36,27 @@ El diagrama ilustra las siguientes rutas y su flujo:
 
 El diagrama ilustra las siguientes rutas y su flujo:
 
-- **middleware : queryValidationExist**  ==> `src/middlewares/queryValidatorMiddleware.ts`
+- **middleware : queryValidationExist**  ==> `src/middlewares/queryValidatorMiddleware.ts` <br>
   - Encargado principalmente de validar si el hash (el cuerpo de la solicitud) ya se ha trabajando anteriormente y se puede entregar en al request (caché.) ; sino esta en redis entonces valida si se encuentra en postgres si está entonces que guarde la informacion en redis y que entregue la información consultada en postgres en respuesta a la solicitud, finalmente si pudo encontrar información en el storage de postgres ni en caché, entonces que invoque **NextFunction** para pasar al siguiente Middleware.<br><br>
-- **middleware : queryCustodianMiddleware**  ==> `src/middlewares/queryCustodianMiddleware.ts`
+- **middleware : queryCustodianMiddleware**  ==> `src/middlewares/queryCustodianMiddleware.ts`<br>
   - Recibiendo el cuerpo de la solicitud de query, se realiza la consulta en la ruta de `/graphql` y por consiguiente se almacena en redis con key del hash, se toman el objeto de respuesta de la solicitud, se mapea con fucniones asincronicas del modelo de bases de datos de migración y se migran a la base en postgres usando el protocolo `sequelize-typescript`. <br><br>
-- **middleware : queryValidationExist**  ==> `src/middlewares/queryValidatorMiddleware.ts`
-  - Encargado principalmente de validar si el hash (el cuerpo de la solicitud) ya se ha trabajando anteriormente y se puede entregar en al request (caché.) ; sino esta en redis entonces valida si se encuentra en postgres si está entonces que guarde la informacion en redis y que entregue la información consultada en postgres en respuesta a la solicitud, finalmente si pudo encontrar información en el storage de postgres ni en caché, entonces que invoque **NextFunction** para pasar al siguiente Middleware.
+- **middleware : logTimeExecutionMiddleware**  ==> `src/middlewares/logTimeExecutionMiddleware.ts`<br>
+  - Se configura un middleware para que imprima por consola el tiempo tomado en la consulta en graphql.
 
 
-## Validaciones Implementadas
 
-- **Validación 1:** Descripción de la validación 1.
-- **Validación 2:** Descripción de la validación 2.
-- **Validación 3:** Descripción de la validación 3.
+## Instalación:
 
-## Ejemplo de Uso
-
-Aquí hay un ejemplo de cómo usar la API:
+Se debe descargar o realizar `git clone <url_repo>` para poder tener acceso al script. Por consiguiente se deben realizas las siguientes instalaciones.
 
 ```bash
-curl -X GET http://tuservidor.com/ruta1
+npm init --y
+npm install express express-graphql sequelize pg pg-hstore redis ioredis axios graphql
+npm install graphql@15.8.0
+npm install --save-dev typescript ts-node @types/node @types/express @types/express-graphql @types/sequelize jest @types/jest
+npm install --save-dev @types/sequelize
+npm install --save-dev @types/node-cron
+npm install @types/swagger-ui-express
+
+
 
