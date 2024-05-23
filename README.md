@@ -78,7 +78,7 @@ Para efectos de la prueba se creo una base de datos,(en la siguiente imagen se p
 
 ### Modelo ERD.
 
-![ModeloERD](imgBlossomAssesment/ModeloERD.png)
+![ModeloERD](imgBlossomAssesment/ModeloERDV2.png)
 
  
 
